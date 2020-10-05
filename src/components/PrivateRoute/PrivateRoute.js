@@ -11,6 +11,7 @@ const PrivateRoute = ({ children, ...rest }) => {
           loggedInVolunteer.email ? (
               children
             ) : (
+              
               <Redirect
                 to={{
                   pathname: "/login",

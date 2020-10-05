@@ -1,0 +1,13 @@
+.login-container{
+    text-align: center;   
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray;
+    margin: auto;
+}
+.login-logo{
+    width: 200px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}

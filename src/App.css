@@ -1,38 +1,88 @@
-.App {
+
+.app-logo{
+  width: 150px;
+  margin-left: 0;
+}
+nav{
+  display:inline-block;
+  margin-left: auto;
+}
+nav a{
+  padding:10px 20px;
+  text-decoration: none;
+  color:black;
+}
+nav .navBtn{
+  margin:5px 20px;
+}
+
+.searchCont input{
+  padding:10px;
+  width:300px;
+  font-size: 20px;
+  border:1px solid gray;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.searchCont .srcBtn{
+  padding:11px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 20px;
+  background-color: rgb(31, 106, 245);
+  color:white;
+  border:none;
+}
+.myEvents{
+  background-color: #f0f6f8;
+  padding: 100px;
+  min-height: 90vh;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.myEvents .events {
+  display:flex;
+  flex-wrap: wrap;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loginForm,
+.registrationForm,
+.volunteerPage,
+.eventPage{
+  background-color: #f0f6f8;
+  padding-top: 100px;
+  padding-left: 300px;
+  min-height: 90vh;
+  text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.registrationForm .form .inputField{
+  width:310px;
+}
+.myEvents .events .form,
+.loginForm .form,
+.registrationForm .form,
+.eventPage .form{
+  background-color: white;
+  padding:20px;
+  border-radius: 10px;
+  margin: 20px;
+  max-width: 700px;
+}
+.eventPage .form textarea,
+.eventPage .form input{
+  padding: 5px;
+  font-size: 18px;
+}
+.cardDiv{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 50px;
 }
-
-.App-link {
-  color: #61dafb;
+.card{
+  max-width: 300px;
+  margin: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.deleteIcon{
+  color: #ffffff;
+  background-color: rgb(250, 58, 58);
+  border-radius: 5px;
 }
