@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Header.css';
 import logos from '../../images/Group 1329.png';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Grid } from '@material-ui/core';
 import { UserContext } from '../../App';
 

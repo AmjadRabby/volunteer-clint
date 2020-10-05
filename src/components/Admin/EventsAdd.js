@@ -3,12 +3,10 @@ import { UserContext } from '../../App';
 import { Button } from '@material-ui/core';
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
-
 
 const EventAdd = () => {
       const [loggedInVolunteer, setLoggedInVolunteer] = useContext(UserContext);
@@ -22,13 +20,14 @@ const EventAdd = () => {
        setSelectedDate(date);
       };
 
-
+      const addEvent = (event) => {
+          console.log(event);
+      }
   
     return (
       <div className="eventPage">
         <form
-          action="https://https://localhost:5000/addEvent"
-          method="post"
+          onSubmit={addEvent}
           className="form"
         >
           <label htmlFor="title">Event Title</label>
@@ -55,7 +54,7 @@ const EventAdd = () => {
           <br />
           <label htmlFor="img">Upload image</label>
           <br />
-          <input type="file" name="img" id="" />
+          <input type="file" name="image" id="" />
           <br />
           <br />
           <label htmlFor="eventDetail">Description</label>

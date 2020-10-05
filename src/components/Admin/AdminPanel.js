@@ -76,8 +76,7 @@ const useStyles = makeStyles((theme) => ({
             <Link to="/eventsAdd" className={classes.btn}>
               <ListItem button classes={{ indicator: { color: "blue" } }}>
                 <AddIcon />
-                Add Event
-                
+                Add Event                
               </ListItem>
             </Link>
           </List>

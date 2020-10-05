@@ -2,9 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
-import fakeData from '../../fakeData/fakeData';
-import Admin from '../Admin/AdminPanel';
-import RegisterDetail from '../RegisterDetail/RegisterDetail';
+
 
 
 import { FormControl, FormGroup, Input, InputLabel } from '@material-ui/core';
@@ -23,7 +21,7 @@ const Register = () => {
 //   const { register, handleSubmit, watch, errors } = useForm();
 
     useEffect(() => {
-        fetch('http://localhost:5000/volunteerTask/'+id)
+        fetch('https://limitless-wave-42171.herokuapp.com/volunteerTask/'+id)
         .then(res => res.json())
         .then(data => setEvents(data))
     }, [id])
@@ -34,7 +32,7 @@ const Register = () => {
 
         console.log('form submitted', volunteerDetail)
 
-        fetch('http://localhost:5000/addRegister', {
+        fetch('https://limitless-wave-42171.herokuapp.com/addRegister', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +79,7 @@ return (
                 </FormControl>
                 <FormControl style={{marginBottom:'10px'}}>
                     <InputLabel htmlFor="description">Description</InputLabel>
-                    <Input onBlur={(event)=>setForm({...form,description:event.target.value})} style={{color:'#3d3b3b'}} id="description" aria-describedby="my-helper-text" />
+                    <Input onBlur={(event)=>setForm({...form,description:event.target.value})} style={{color:'#3d3b3b'}} id="description" aria-describedby="my-helper-text" required/>
                 </FormControl>
                 <FormControl style={{marginBottom:'10px'}}>
                 <InputLabel htmlFor="description"></InputLabel>

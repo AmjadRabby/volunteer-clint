@@ -3,41 +3,37 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import './RegisterDetail.css';
-import { useHistory } from 'react-router-dom';
+
 
 const RegisterDetail = () => {
     const [loggedInVolunteer, setLoggedInVolunteer] = useContext(UserContext)
     const [registers, setRegisters] = useState([])
-    const history = useHistory()
+    
 
     useEffect(() => {
-        fetch('http://localhost:5000/volunteerRegister?email='+loggedInVolunteer.email)
+        fetch('https://limitless-wave-42171.herokuapp.com/volunteerRegister?email='+loggedInVolunteer.email)
         .then(res => res.json())
         .then(data => setRegisters(data))
     }, [])
 
 
     const delateEventHandler = (id) => {
-        // console.log(id);
-        fetch(`http://localhost:5000/delate/${id}`,{
+        fetch(`https://limitless-wave-42171.herokuapp.com/delate/${id}`,{
             method: 'DELETE',
         })
         .then(res => res.json())
         .then(data => {
             if(data){
-                const existingEvents = registers.filter(data=>data._id !== id)
-                console.log(existingEvents)
+                const existingEvents = registers.filter(data=>data._id !== id)                
                 setRegisters(existingEvents)
             }
            
-        })
-        // event.target.parentNode.parentNode.parentNode.parentNode.style.display = 'none';
+        })     
     }
     return (
         <div className="">
             <Header/>
-            <div style={{width:'70vw', margin:'auto', marginTop:'70px'}}>
-            
+            <div style={{width:'70vw', margin:'auto', marginTop:'70px'}}>            
             <div>
             <Grid container item xs={12} spacing='5'>
                 {

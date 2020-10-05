@@ -6,9 +6,8 @@ import { Grid } from '@material-ui/core';
 
 const Home = () => {
     const [volunteerTasks, setVolunteerTasks] = useState([])
-
     useEffect(() => {
-        fetch('http://localhost:5000/volunteerTasks')
+        fetch('https://limitless-wave-42171.herokuapp.com/volunteerTasks')
         .then(res => res.json())
         .then(data => setVolunteerTasks(data))
     }, [])
@@ -36,9 +35,8 @@ const Home = () => {
                             let colors=['#3F90FC','#FFBD3E','#FF7044', '#cc6fb5e0'];
                             const random = Math.floor(Math.random()*4)
                             return(
-                                <Grid item xs={12} sm={6} md={3} key={event._id}>
-                                
-                                    <VolunteerTasks event={event} myColor={colors[random]} ></VolunteerTasks>
+                                <Grid item xs={12} sm={6} md={3} key={event._id}>                                
+                                    <VolunteerTasks event={event} myColor={colors[random]} />
                                 </Grid>
                             )
                         })
