@@ -1,6 +1,4 @@
-
 import { CardActionArea, CardContent, CardMedia, makeStyles, Typography } from '@material-ui/core';
-// import { useStyles } from '@material-ui/pickers/views/Calendar/SlideTransition';
 import React, { useContext } from 'react';
 import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
@@ -19,7 +17,6 @@ const VolunteerTasks = (props) => {
     const history = useHistory()
 
     const handleRegister = (id) => {
-        // setLoggedInVolunteer({...loggedInVolunteer, event:props.event})
         history.push(`/register/${id}`);
     }
 
@@ -27,7 +24,7 @@ const VolunteerTasks = (props) => {
     const classes = useStyles();
     const {image, eventName, _id}=props.event
     return (
-        <div className="">            
+        <div className="">        
 
             <Card onClick={() => handleRegister(_id)} className={classes.root} style={{background:props.myColor}}>
             <CardActionArea >

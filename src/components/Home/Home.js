@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import VolunteerTasks from '../VolunteerTasks/VolunteerTasks';
-import background from '../../images/backgroud.jpg'
+import background from '../../images/cover.jpg'
 import { Grid } from '@material-ui/core';
 
 const Home = () => {
@@ -13,13 +13,13 @@ const Home = () => {
     }, [])
     return (        
         <div style={{background:`linear-gradient(to bottom,
-                 rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
-                 url(${background}) `, height:'496px'}}>                   
+                 rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+                 url(${background}) `, height:'496px' }}>                   
 
                 <Header/>
 
-                <div className='banner d-flex flex-column justify-content-center align-items-center mt-3'>
-                    <h2>I GROW BY HELPING PEOPLE IN NEED</h2>
+                <div className='d-flex flex-column justify-content-center align-items-center mt-5'>
+                    <h3>I GROW BY HELPING PEOPLE IN NEED</h3>
                     <div className="input-group pt-2 w-25">
                         <input type="text" className="form-control" placeholder="Search food items" aria-label="Search food items" aria-describedby="button-addon2"></input>
                         <div className="input-group-append">

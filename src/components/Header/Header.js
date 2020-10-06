@@ -14,10 +14,10 @@ const Header = () => {
                     <img style={{height:'60px'}} src={logos} alt="volunteer network logo"/>
                 </Grid>
                 <Grid container item xs={5} justify='space-around'>
-                    <Link to='/' className='link'><b>Home</b></Link>
-                    <Link to='/donation' className='link'><b>Donation</b></Link>
-                    <Link to='/eventsAdd' className='link'><b>Events</b></Link>
-                    <Link to='/blog' className='link'><b>Blog</b></Link>
+                    <Link to='/' className='link'>Home</Link>
+                    <Link to='/donation' className='link'>Donation</Link>
+                    <Link to='/eventsAdd' className='link'>Events</Link>
+                    <Link to='/blog' className='link'>Blog</Link>
                     <Link to='/login' className='link'>
                         {
                                 loggedInVolunteer.email ? <p>{loggedInVolunteer.name}</p> :  <Button  variant="contained" style={{background:'#3F90FC', color:'white'}}>

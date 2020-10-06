@@ -1,14 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
-
-
-
 import { FormControl, FormGroup, Input, InputLabel } from '@material-ui/core';
 import logo from '../../images/Group 1329.png'
-
-
 
 const Register = () => {
 
@@ -18,7 +12,6 @@ const Register = () => {
     const {id} = useParams()
    
     const [form, setForm]=useState({eventName: loggedInVolunteer.event?.name, date:new Date().toDateString(), })
-//   const { register, handleSubmit, watch, errors } = useForm();
 
     useEffect(() => {
         fetch('https://limitless-wave-42171.herokuapp.com/volunteerTask/'+id)
@@ -27,11 +20,7 @@ const Register = () => {
     }, [id])
 
     const submitFormHandler = (event) => { 
-       
         const volunteerDetail = {...loggedInVolunteer,  events, form}
-
-        console.log('form submitted', volunteerDetail)
-
         fetch('https://limitless-wave-42171.herokuapp.com/addRegister', {
             method: 'POST',
             headers: {
@@ -41,19 +30,17 @@ const Register = () => {
         })
         .then(res => res.json())
         .then(data => {
+            history.push('/registerDetail');
             if(data){
+
                 alert('Register successfully');
             }
 
-
         })
         event.preventDefault()
-        history.push('/registerDetail');
-    
+       
         
     };
-
-// console.log(tasks.name)
 
 return (
     <div >
